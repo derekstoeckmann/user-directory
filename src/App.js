@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import api from "./utils/api.js";
+import UsersTable from "./components/UsersTable";
+import { Container } from "react-bootstrap";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -16,11 +19,9 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      {users.map(user => (
-        <h1 key={user.id}>{user.login}</h1>
-      ))}
-    </div>
+    <Container>
+      <UsersTable users={users} />
+    </Container>
   );
 };
 
