@@ -4,7 +4,7 @@ import "./App.css";
 import api from "./utils/api.js";
 import UsersTable from "./components/UsersTable";
 import FilterInput from "./components/FilterInput";
-import { Container } from "react-bootstrap";
+import { Container, Jumbotron } from "react-bootstrap";
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -28,6 +28,9 @@ const App = () => {
 
   return (
     <Container>
+      <Jumbotron>
+        <h1>GitHub User Directory</h1>
+      </Jumbotron>
       <FilterInput inputValue={inputValue} setInputValue={setInputValue} />
       <UsersTable
         handleSortAscending={handleSortAscending}
