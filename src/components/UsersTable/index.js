@@ -1,15 +1,20 @@
 import React from "react";
-import { Table } from "react-bootstrap";
+import { Table, Button } from "react-bootstrap";
 
 const UsersTable = props => {
-  const { users } = props;
+  const { users, handleSortAscending } = props;
   return (
-    <Table striped bordered hover variant="dark">
+    <Table striped bordered hover>
       <thead>
         <tr>
           <th>avatar</th>
           <th>id</th>
-          <th>username</th>
+          <th>
+            username{" "}
+            <Button onClick={handleSortAscending} variant="secondary" size="sm">
+              <i className="fa fa-chevron-down"></i>
+            </Button>
+          </th>
           <th>url</th>
         </tr>
       </thead>
