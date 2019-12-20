@@ -26,6 +26,12 @@ const App = () => {
     setUsers(sortedUsers);
   };
 
+  const handleSortDescending = () => {
+    const sortedUsers = [...users].sort((a, b) => (a.login > b.login ? -1 : 1));
+
+    setUsers(sortedUsers);
+  };
+
   return (
     <Container>
       <Jumbotron>
@@ -34,6 +40,7 @@ const App = () => {
       <FilterInput inputValue={inputValue} setInputValue={setInputValue} />
       <UsersTable
         handleSortAscending={handleSortAscending}
+        handleSortDescending={handleSortDescending}
         users={users.filter(({ login }) => login.includes(inputValue))}
       />
     </Container>

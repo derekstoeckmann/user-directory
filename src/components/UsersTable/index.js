@@ -1,18 +1,24 @@
 import React from "react";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Figure } from "react-bootstrap";
 
 const UsersTable = props => {
-  const { users, handleSortAscending } = props;
+  const { users, handleSortAscending, handleSortDescending } = props;
   return (
     <Table striped bordered hover>
       <thead>
         <tr>
           <th>avatar</th>
-          <th>id</th>
           <th>
-            username{" "}
+            username{"  "}
             <Button onClick={handleSortAscending} variant="secondary" size="sm">
               <i className="fa fa-chevron-down"></i>
+            </Button>{" "}
+            <Button
+              onClick={handleSortDescending}
+              variant="secondary"
+              size="sm"
+            >
+              <i className="fa fa-chevron-up"></i>
             </Button>
           </th>
           <th>url</th>
@@ -21,10 +27,18 @@ const UsersTable = props => {
       <tbody>
         {users.map(user => (
           <tr key={user.id}>
-            <td>{user.avatar_url}</td>
-            <td>{user.id}</td>
+            <td>
+              <Figure.Image
+                width={80}
+                height={80}
+                alt={user.login}
+                src={user.avatar_url}
+              />
+            </td>
             <td>{user.login}</td>
-            <td>{user.html_url}</td>
+            <td>
+              <a href={user.html_url}>GitHub</a>
+            </td>
           </tr>
         ))}
       </tbody>
