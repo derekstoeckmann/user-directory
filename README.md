@@ -5,6 +5,7 @@
 - [Description](#description)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Link](#link)
 - [Credits](#credits)
 - [License](#license)
 
@@ -25,6 +26,10 @@ For further instructions, visit https://help.github.com.
 When the page loads, a table of GitHub users will be displayed. Use the input on top to filter users by username, or sort by username using the arrows located at the top of the username column:
 
 ![User directory](/public/assets/screenshots/user-directory.png?raw=true "User directory")
+
+## Link
+
+[Heroku](https://fathomless-brushlands-95399.herokuapp.com/)
 
 ## Credits
 
